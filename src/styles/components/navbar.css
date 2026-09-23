@@ -119,10 +119,6 @@
   white-space: nowrap;
 }
 
-/* Hide brand text on very small screens */
-@media (max-width: 440px) {
-  .nav-brand-text { display: none; }
-}
 
 /* ---------- Center pill links ---------- */
 .nav-pill {

@@ -1,0 +1,46 @@
+---
+import Icon from '../Icon.astro';
+
+const events = [
+  { icon: 'cake', title: 'Birthday Celebrations', desc: 'Custom cakes, décor and a dedicated host for your special day.', img: '/images/dessert-cake.jpg',    meta: '10–40 guests' },
+  { icon: 'work', title: 'Corporate Dinners',     desc: 'Quiet private room, projectors and set menus for teams.',       img: '/images/interior-booth.jpg',  meta: '15–50 guests' },
+  { icon: 'heart',title: 'Anniversaries',         desc: 'Candle-lit corner tables, curated menus and romantic music.',   img: '/images/interior-floral.jpg', meta: '2–20 guests' },
+];
+---
+<section class="section bg-cream">
+  <div class="container">
+    <div class="section-header center">
+      <span class="label">Celebrate With Us</span>
+      <h2 class="section-title">Private dining & events.</h2>
+      <p class="section-sub">From birthdays to corporate dinners — we host it all.</p>
+    </div>
+
+    <div class="slider-wrapper">
+      <div class="slider-track" id="events-slider">
+        {events.map((e, i) => (
+          <div class={`event slide hover-lift animate-fade-up delay-${(i + 1) * 100}`}>
+            <img src={e.img} alt={e.title} class="event-image" />
+            <div class="event-body">
+              <div class="event-icon"><Icon name={e.icon} size={24} /></div>
+              <h3 class="event-title">{e.title}</h3>
+              <p class="event-desc">{e.desc}</p>
+              <div class="event-meta">
+                <div class="event-meta-item">
+                  <span class="event-meta-label">Capacity</span>
+                  <strong>{e.meta}</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="slider-controls">
+        <div class="slider-dots" id="events-dots"></div>
+      </div>
+    </div>
+
+    <div class="text-center mt-lg">
+      <a href="/events" class="btn btn-blue btn-lg">See All Events →</a>
+    </div>
+  </div>
+</section>

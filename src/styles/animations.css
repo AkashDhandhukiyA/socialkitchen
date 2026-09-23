@@ -1,6 +1,11 @@
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
+  from { opacity: 0; transform: translateY(40px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes reveal {
+  0% { opacity: 0; clip-path: inset(100% 0 0 0); transform: translateY(20px); }
+  100% { opacity: 1; clip-path: inset(0 0 0 0); transform: translateY(0); }
 }
 
 @keyframes float {
@@ -8,14 +13,33 @@
   50%      { transform: translateY(-12px); }
 }
 
-@keyframes pulseSlow {
-  0%, 100% { opacity: 1; }
-  50%      { opacity: 0.5; }
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
-.animate-fade-up { animation: fadeUp 0.8s ease-out forwards; }
-.animate-float   { animation: float 4s ease-in-out infinite; }
+@keyframes pulseSlow {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.6; }
+}
 
+.animate-fade-up, .animate-reveal { opacity: 0; }
+.animate-fade-up.in-view { animation: fadeUp 0.8s var(--ease-spring) forwards; }
+.animate-reveal.in-view  { animation: reveal 1s var(--ease-spring) forwards; }
+.animate-float   { animation: float 5s ease-in-out infinite; }
+
+.delay-100 { animation-delay: 100ms; }
 .delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
 .delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
 .delay-600 { animation-delay: 600ms; }
+
+/* Global hover transition class */
+.hover-lift {
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--sh-hover);
+}

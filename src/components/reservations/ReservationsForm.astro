@@ -1,0 +1,70 @@
+---
+import Icon from '../Icon.astro';
+---
+<div class="form-card">
+  <h2 class="form-title">Reserve Your Table</h2>
+  <p class="form-desc">
+    Fill in your details and we'll confirm your reservation within 30 minutes.
+  </p>
+
+  <form action="https://formspree.io/f/YOUR_ID" method="POST">
+    <div class="form-row form-row-2">
+      <div class="form-group">
+        <label class="form-label" for="rname">Full Name</label>
+        <input id="rname" type="text" name="name" required class="form-input" placeholder="Your name" />
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="rphone">Phone</label>
+        <input id="rphone" type="tel" name="phone" required class="form-input" placeholder="+91 ..." />
+      </div>
+    </div>
+
+    <div class="form-row form-row-3">
+      <div class="form-group">
+        <label class="form-label" for="rdate">Date</label>
+        <input id="rdate" type="date" name="date" required class="form-input" />
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="rtime">Time</label>
+        <input id="rtime" type="time" name="time" required class="form-input" />
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="rguests">Guests</label>
+        <select id="rguests" name="guests" class="form-input">
+          <option>1 person</option>
+          <option>2 people</option>
+          <option>3 people</option>
+          <option>4 people</option>
+          <option>5 people</option>
+          <option>6 people</option>
+          <option>7–10 people</option>
+          <option>10+ people</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="roccasion">Occasion (optional)</label>
+      <select id="roccasion" name="occasion" class="form-input">
+        <option>Just dining</option>
+        <option>Birthday</option>
+        <option>Anniversary</option>
+        <option>Date night</option>
+        <option>Business dinner</option>
+        <option>Family gathering</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="rnotes">Special Requests</label>
+      <textarea id="rnotes" name="notes" class="form-input" placeholder="Jain food, window seat, high chair, etc."></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-orange btn-lg btn-block">Confirm Reservation</button>
+
+    <div class="form-note">
+      <Icon name="clock" size={18} />
+      <span>We hold tables for 15 minutes past the reserved time. For large groups (10+), please call us directly.</span>
+    </div>
+  </form>
+</div>

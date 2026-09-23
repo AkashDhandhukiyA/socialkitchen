@@ -5,88 +5,117 @@ const year = new Date().getFullYear();
 
 const exploreLinks = [
   { href: '/#home',    label: 'Home' },
-  { href: '/#about',   label: 'About' },
-  { href: '/#gallery', label: 'Gallery' },
-  { href: '/#events',  label: 'Events' },
-  { href: '/#contact', label: 'Contact' },
+  { href: '/about',    label: 'Our Story' },
+  { href: '/menu',     label: 'Menu Categories' },
+  { href: '/gallery',  label: 'Gallery' },
+];
+
+const visitLinks = [
+  { href: '/reservations', label: 'Book a Table' },
+  { href: '/events',       label: 'Private Events' },
+  { href: '/contact',      label: 'Contact Us' },
 ];
 
 const socials = [
+  { href: '/contact',                   label: 'Contact Us',icon: 'phone' },
   { href: 'https://instagram.com',      label: 'Instagram', icon: 'ig' },
   { href: 'https://facebook.com',       label: 'Facebook',  icon: 'fb' },
-  { href: 'https://wa.me/919000000000', label: 'WhatsApp',  icon: 'wa' },
+  { href: 'https://wa.me/07567640841', label: 'WhatsApp',  icon: 'wa' },
 ];
 ---
 <footer class="foot">
   <div class="foot-wrap">
-
-    <!-- Top row: Brand + quick info + socials -->
-    <div class="foot-top">
-
-      <!-- Brand -->
-      <a href="/#home" class="foot-brand">
-        <span class="foot-mark">S</span>
-        <span class="foot-brand-text">
+    
+    <div class="foot-main">
+      
+      <!-- Column 1: Brand -->
+      <div class="foot-brand-col">
+        <a href="/" class="foot-brand">
           <span class="foot-brand-name">The S<em>oo</em>cial Kitcchen</span>
-          <span class="foot-brand-sub">Pure Veg · Vapi · Since 2022</span>
-        </span>
-      </a>
-
-      <!-- Quick contact -->
-      <div class="foot-quick">
-        <a href="tel:+919000000000" class="foot-quick-item">
-          <Icon name="phone" size={16} />
-          <span>+91 90000 00000</span>
         </a>
-        <span class="foot-quick-divider"></span>
-        <span class="foot-quick-item">
-          <Icon name="clock" size={16} />
-          <span>11 AM – 11 PM · Open All Days</span>
-        </span>
+        <p class="foot-desc">
+          Bold flavours, warm hospitality, and a room designed for conversations. Fresh paneer specials & Asian favourites made daily.
+        </p>
       </div>
 
-      <!-- Socials -->
+      <!-- Column 2: Explore -->
+      <div class="foot-accordion">
+        <button class="foot-col-title" aria-expanded="false">
+          <span>Explore</span>
+          <span class="foot-icon">+</span>
+        </button>
+        <nav class="foot-links">
+          {exploreLinks.map(l => (
+            <a href={l.href} class="foot-link">{l.label}</a>
+          ))}
+        </nav>
+      </div>
+
+      <!-- Column 3: Visit Us -->
+      <div class="foot-accordion">
+        <button class="foot-col-title" aria-expanded="false">
+          <span>Visit Us</span>
+          <span class="foot-icon">+</span>
+        </button>
+        <nav class="foot-links">
+          {visitLinks.map(l => (
+            <a href={l.href} class="foot-link">{l.label}</a>
+          ))}
+        </nav>
+      </div>
+      
+    </div>
+
+    <!-- Bottom: Socials & Legal -->
+    <div class="foot-bottom">
+      
       <div class="foot-socials">
         {socials.map(s => (
           <a
             href={s.href}
             class="foot-social"
             aria-label={s.label}
-            target="_blank"
-            rel="noopener noreferrer"
+            target={s.icon !== 'phone' ? "_blank" : undefined}
+            rel={s.icon !== 'phone' ? "noopener noreferrer" : undefined}
           >
-            <Icon name={s.icon} size={17} />
+            <Icon name={s.icon} size={18} />
           </a>
         ))}
       </div>
 
-    </div>
-
-    <!-- Middle row: Links + newsletter -->
-    <div class="foot-mid">
-
-      <!-- Explore links -->
-      <nav class="foot-links" aria-label="Footer navigation">
-        {exploreLinks.map(l => (
-          <a href={l.href} class="foot-link">{l.label}</a>
-        ))}
-      </nav>
-
-      <!-- Newsletter / note -->
-      <p class="foot-note">
-        Fresh flavours, seasonal specials & private events — all made in-house, right here in Vapi.
-      </p>
-
-    </div>
-
-    <!-- Bottom bar -->
-    <div class="foot-bottom">
-      <span class="foot-copy">© {year} The Social Kitcchen · All rights reserved.</span>
-      <span class="foot-legal">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-      </span>
+      <div class="foot-legal">
+        <span class="foot-copy">© {year} The Social Kitcchen. All rights reserved.</span>
+        <div class="foot-legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+      
     </div>
 
   </div>
 </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const accordions = document.querySelectorAll('.foot-accordion');
+    
+    accordions.forEach(acc => {
+      const btn = acc.querySelector('.foot-col-title');
+      if (btn) {
+        btn.addEventListener('click', () => {
+          // Only toggle on mobile (where max-height styling applies)
+          if (window.innerWidth < 900) {
+            const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', !isExpanded);
+            
+            const icon = btn.querySelector('.foot-icon');
+            if (icon) {
+              icon.textContent = isExpanded ? '+' : '−';
+            }
+          }
+        });
+      }
+    });
+  });
+</script>

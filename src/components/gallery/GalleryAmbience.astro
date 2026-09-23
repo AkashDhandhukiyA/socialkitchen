@@ -1,0 +1,27 @@
+---
+const ambienceImages = [
+  { src: '/images/hero.jpg',            alt: 'Main dining hall',   size: 'large' },
+  { src: '/images/interior-bar.jpg',    alt: 'The blue bar',       size: '' },
+  { src: '/images/interior-booth.jpg',  alt: 'Blue booth seating', size: '' },
+  { src: '/images/interior-floral.jpg', alt: 'Floral pink wall',   size: 'wide' },
+];
+---
+<section class="section bg-white">
+  <div class="container">
+    <div class="section-header center">
+      <span class="label">The Space</span>
+      <h2 class="section-title">Our ambience.</h2>
+      <p class="section-sub">
+        Blue patterned bar, floral bougainvillea wall, mustard accents — every corner designed to delight.
+      </p>
+    </div>
+
+    <div class="ambience-grid">
+      {ambienceImages.map(img => (
+        <div class:list={['ambience-item', img.size]}>
+          <img src={img.src} alt={img.alt} loading="lazy" />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

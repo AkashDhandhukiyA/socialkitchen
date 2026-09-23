@@ -1,0 +1,26 @@
+---
+export interface Props {
+  title: string;
+  breadcrumbText: string;
+  desc?: string;
+}
+
+const { title, breadcrumbText, desc } = Astro.props;
+---
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner">
+      <div class="page-hero-crumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <span>{breadcrumbText}</span>
+      </div>
+      <h1 class="page-hero-title">{title}</h1>
+      {desc && (
+        <p class="page-hero-desc">
+          {desc}
+        </p>
+      )}
+    </div>
+  </div>
+</section>

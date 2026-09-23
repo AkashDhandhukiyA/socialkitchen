@@ -1,0 +1,31 @@
+---
+import Icon from '../Icon.astro';
+
+const values = [
+  { img: '/images/icon-veg.jpg',       title: '100% Pure Veg',    desc: 'Every dish is completely vegetarian — including Jain options.' },
+  { img: '/images/icon-chef.jpg',      title: 'Cooked to Order',  desc: 'Nothing sits under a heat lamp. Every dish starts when you order.' },
+  { img: '/images/icon-handshake.jpg', title: 'Warm Hospitality', desc: 'Our team treats every guest like family — that is the difference.' },
+  { img: '/images/icon-veg.jpg',       title: 'Honest Pricing',   desc: 'Generous portions at fair prices. No inflated markups.' },
+];
+---
+<section class="section bg-cream">
+  <div class="container">
+    <div class="section-header center animate-fade-up">
+      <span class="label">Our Values</span>
+      <h2 class="section-title">What we stand for.</h2>
+      <p class="section-sub">Four principles that guide every plate we serve.</p>
+    </div>
+
+    <div class="grid-4">
+      {values.map((v, i) => (
+        <div class={`card hover-lift animate-fade-up delay-${(i + 1) * 100}`} style="background: var(--white); border: 1px solid rgba(0,0,0,0.05); text-align: center; padding: 2.5rem 1.5rem; border-radius: var(--r-xl); box-shadow: var(--sh-md);">
+          <div style="border-radius: 50%; overflow: hidden; width: 100px; height: 100px; margin: 0 auto 1.5rem auto; box-shadow: var(--sh-md);">
+            <img src={v.img} alt={v.title} style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'" />
+          </div>
+          <h3 class="card-title" style="font-size: 1.25rem; margin-bottom: 0.75rem;">{v.title}</h3>
+          <p class="card-desc" style="color: var(--text-soft); line-height: 1.6;">{v.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

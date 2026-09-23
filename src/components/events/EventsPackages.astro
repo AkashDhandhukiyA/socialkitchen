@@ -1,0 +1,29 @@
+---
+import Icon from '../Icon.astro';
+
+const packages = [
+  { icon: 'dish',  title: 'Set Menus',   desc: 'Vegetarian set menus with starters, mains, breads and dessert.' },
+  { icon: 'spark', title: 'Custom Décor', desc: 'Balloons, flowers and lights arranged based on your theme.' },
+  { icon: 'award', title: 'Music & AV',   desc: 'Sound system, projector and mic available for speeches.' },
+];
+---
+<section class="section bg-cream">
+  <div class="container">
+    <div class="section-header center">
+      <span class="label">What We Offer</span>
+      <h2 class="section-title">Event packages include.</h2>
+    </div>
+
+    <div class="feature-strip">
+      {packages.map(p => (
+        <div class="feature-strip-item">
+          <div class="feature-strip-icon"><Icon name={p.icon} /></div>
+          <div>
+            <div class="feature-strip-title">{p.title}</div>
+            <div class="feature-strip-desc">{p.desc}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,43 @@
+---
+const reviews = [
+  { name: 'Priya S.', rating: 5, role: 'Regular Guest',  text: 'The paneer butter masala is exceptional — rich, creamy and served hot. Beautiful blue interiors!' },
+  { name: 'Rahul M.', rating: 5, role: 'Verified Diner', text: 'Booked the private room for a birthday. Décor, service, food — everything was flawless.' },
+  { name: 'Aisha K.', rating: 4, role: 'Jain Diner',     text: 'They prepared Jain dal tadka without onion-garlic without any fuss. Same bold taste.' },
+];
+---
+<section class="section bg-white">
+  <div class="container">
+    <div class="section-header center">
+      <span class="label">Guest Reviews</span>
+      <h2 class="section-title">What our guests say.</h2>
+      <p class="section-sub">Real experiences from real diners.</p>
+    </div>
+
+    <div class="slider-wrapper">
+      <div class="slider-track" id="reviews-slider">
+        {reviews.map(r => (
+          <div class="review slide">
+            <div class="review-quote">"</div>
+            <div class="review-stars">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <span class={i < r.rating ? '' : 'empty'}>★</span>
+              ))}
+            </div>
+            <p class="review-text">{r.text}</p>
+            <div class="review-author">
+              <div class="review-avatar">{r.name.charAt(0)}</div>
+              <div>
+                <div class="review-name">{r.name}</div>
+                <div class="review-role">{r.role}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      <div class="slider-controls">
+        <div class="slider-dots" id="slider-dots"></div>
+      </div>
+    </div>
+  </div>
+</section>

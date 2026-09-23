@@ -1,0 +1,17 @@
+---
+import Icon from '../Icon.astro';
+---
+<section class="section bg-cream">
+  <div class="container">
+    <div class="cta-block glass-panel hover-lift text-center" style="padding: 4rem 2rem; border-radius: var(--r-xl); background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.6)); border: 1px solid var(--white);">
+      <h2 class="section-title" style="margin-bottom: 1rem;">Reserve your table tonight.</h2>
+      <p class="section-sub" style="margin-inline: auto; max-width: 32rem;">Walk-ins welcome, but we recommend booking ahead — especially on weekends.</p>
+      <div class="cta-actions" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+        <a href="/reservations" class="btn btn-orange btn-lg">Book a Table</a>
+        <a href="/contact" class="btn btn-blue btn-lg" style="display: flex; align-items: center; gap: 0.5rem;">
+          <Icon name="phone" size={18} /> Contact Us
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

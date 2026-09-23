@@ -28,6 +28,18 @@
   --border:        #E4E8F0;
   --border-dark:   #CBD3E0;
 
+  /* Gradients */
+  --gradient-blue: linear-gradient(135deg, var(--blue), var(--blue-dark));
+  --gradient-orange: linear-gradient(135deg, var(--orange), var(--orange-dark));
+  --gradient-dark: linear-gradient(to top, rgba(10,31,77,0.9), transparent);
+  --gradient-subtle: linear-gradient(180deg, var(--white), var(--off-white));
+
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-bg-dark: rgba(10, 31, 77, 0.85);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.3);
+  --glass-blur: blur(12px);
+
   /* Text */
   --charcoal:      #141B29;
   --text-mid:      #4B5563;
@@ -46,10 +58,11 @@
   --r-pill: 9999px;
 
   /* Shadows */
-  --sh-sm:  0 2px 8px rgba(20,27,41,0.05);
-  --sh-md:  0 8px 24px rgba(20,27,41,0.08);
-  --sh-lg:  0 20px 48px rgba(20,27,41,0.12);
-  --sh-xl:  0 24px 60px rgba(20,27,41,0.18);
+  --sh-sm:  0 2px 8px rgba(20,27,41,0.04);
+  --sh-md:  0 8px 24px rgba(20,27,41,0.06);
+  --sh-lg:  0 20px 48px rgba(20,27,41,0.1);
+  --sh-xl:  0 24px 60px rgba(20,27,41,0.15);
+  --sh-hover: 0 16px 40px rgba(20,27,41,0.12);
   --sh-blue:    0 12px 32px -8px rgba(30,79,168,0.4);
   --sh-orange:  0 12px 32px -8px rgba(242,106,31,0.45);
 
@@ -58,4 +71,5 @@
   --nav-h: 78px;
 
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }

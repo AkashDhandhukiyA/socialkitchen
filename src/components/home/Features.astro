@@ -1,0 +1,31 @@
+---
+import Icon from '../Icon.astro';
+
+const features = [
+  { icon: 'leaf',  title: '100% Pure Veg',     desc: 'Every dish is completely vegetarian — including Jain options.' },
+  { icon: 'chef',  title: 'Cooked to Order',   desc: 'Nothing sits under a heat lamp. Every dish starts when you order.' },
+  { icon: 'fork',  title: 'Multi-Cuisine Menu',desc: 'North Indian, Indo-Chinese, Italian pasta, and Japanese sushi.' },
+  { icon: 'cake',  title: 'Events & Parties',  desc: 'Dedicated private spaces for birthdays, anniversaries and corporate dinners.' },
+];
+---
+<section class="section bg-cream">
+  <div class="container">
+    <div class="section-header center">
+      <span class="label">Why Dine With Us</span>
+      <h2 class="section-title">An experience, not just a meal.</h2>
+      <p class="section-sub">
+        From the first greeting to the last bite — every detail matters.
+      </p>
+    </div>
+
+    <div class="grid-4">
+      {features.map((f, i) => (
+        <div class={`card hover-lift animate-fade-up delay-${(i + 1) * 100}`}>
+          <div class="card-icon"><Icon name={f.icon} size={24} /></div>
+          <h3 class="card-title">{f.title}</h3>
+          <p class="card-desc">{f.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

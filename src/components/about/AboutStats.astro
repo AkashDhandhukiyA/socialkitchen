@@ -1,0 +1,27 @@
+---
+const stats = [
+  { value: '4.9★', label: 'Guest Rating' },
+  { value: '60+',  label: 'Seats Available' },
+  { value: '07',   label: 'Menu Categories' },
+  { value: '02',   label: 'Private Rooms' },
+];
+---
+<section class="section-tight" style="background: linear-gradient(135deg, var(--blue-deep) 0%, var(--blue) 100%); position: relative; overflow: hidden;">
+  <!-- Abstract background pattern -->
+  <div style="position: absolute; inset: 0; opacity: 0.05; background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;"></div>
+  
+  <div class="container" style="position: relative; z-index: 1;">
+    <div class="grid-4" style="text-align: center;">
+      {stats.map((s, i) => (
+        <div class={`stat-card animate-fade-up delay-${i * 100}`} style="padding: 2rem 1rem;">
+          <div style="font-family: var(--font-display); font-size: clamp(3rem, 5vw, 4rem); font-weight: 800; color: var(--orange); line-height: 1; margin-bottom: 1rem; text-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            {s.value}
+          </div>
+          <div style="font-size: 0.875rem; color: rgba(255,255,255,0.9); text-transform: uppercase; letter-spacing: 0.2em; font-weight: 600;">
+            {s.label}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

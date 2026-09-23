@@ -1,0 +1,31 @@
+---
+const foodImages = [
+  { src: '/images/food-biryani.jpg',    alt: 'Veg Biryani',           caption: 'Veg Dum Biryani',           size: 'tall' },
+  { src: '/images/food-soup.jpg',       alt: 'Manchow Soup',          caption: 'Veg Manchow Soup',          size: '' },
+  { src: '/images/ood-jeera-rice.jpg', alt: 'Jeera Rice',            caption: 'Jeera Rice',                size: '' },
+  { src: '/images/food-naan.jpg',       alt: 'Butter Naan',           caption: 'Butter Naan',               size: 'wide' },
+  { src: '/images/food-chole.jpg',      alt: 'Chole with Rice',       caption: 'Chole with Jeera Rice',     size: '' },
+  { src: '/images/food-pasta.jpg',      alt: 'Alfredo Pasta',         caption: 'Creamy Alfredo Pasta',      size: '' },
+  { src: '/images/food-sushi.jpg',      alt: 'Sushi Platter',         caption: 'Veg Sushi Platter',         size: '' },
+  { src: '/images/dessert-cake.jpg',    alt: 'Chocolate Cake',        caption: 'Chocolate Celebration Cake',size: 'tall' },
+  { src: '/images/facade.jpg',          alt: 'Restaurant Facade',     caption: 'The Social Kitcchen',       size: '' },
+];
+---
+<section class="section bg-cream">
+  <div class="container">
+    <div class="section-header center">
+      <span class="label">The Food</span>
+      <h2 class="section-title">From our kitchen.</h2>
+      <p class="section-sub">Every dish photographed fresh off the pan.</p>
+    </div>
+
+    <div class="gallery-grid">
+      {foodImages.map(img => (
+        <div class:list={['gallery-item', img.size]}>
+          <img src={img.src} alt={img.alt} loading="lazy" />
+          <div class="gallery-cap">{img.caption}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -3,9 +3,12 @@
   background-color: var(--white);
   border: 1px solid var(--border);
   border-radius: var(--r-lg);
-  padding: 2rem;
+  padding: 1.25rem;
   transition: all 320ms var(--ease);
   position: relative;
+}
+@media (min-width: 768px) {
+  .card { padding: 2rem; }
 }
 
 .card:hover {
@@ -15,42 +18,54 @@
 }
 
 .card-icon {
-  width: 52px;
-  height: 52px;
+  width: 44px;
+  height: 44px;
   border-radius: var(--r-md);
   background-color: var(--blue-soft);
   color: var(--blue);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   transition: all 320ms var(--ease);
+}
+@media (min-width: 768px) {
+  .card-icon { width: 52px; height: 52px; margin-bottom: 1.5rem; }
 }
 .card:hover .card-icon {
   background-color: var(--orange);
   color: var(--white);
 }
 .card-icon svg {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   stroke-width: 1.8;
   fill: none;
   stroke: currentColor;
 }
+@media (min-width: 768px) {
+  .card-icon svg { width: 24px; height: 24px; }
+}
 
 .card-title {
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
   color: var(--blue-deep);
   letter-spacing: -0.01em;
 }
+@media (min-width: 768px) {
+  .card-title { font-size: 1.25rem; }
+}
 
 .card-desc {
-  font-size: 0.9375rem;
+  font-size: 0.85rem;
   color: var(--text-soft);
-  line-height: 1.65;
+  line-height: 1.6;
+}
+@media (min-width: 768px) {
+  .card-desc { font-size: 0.9375rem; line-height: 1.65; }
 }
 
 /* Review card */
@@ -58,12 +73,15 @@
   background-color: var(--white);
   border: 1px solid var(--border);
   border-radius: var(--r-lg);
-  padding: 2rem;
+  padding: 1.25rem;
   display: flex;
   flex-direction: column;
   height: 100%;
   transition: all 320ms var(--ease);
   position: relative;
+}
+@media (min-width: 768px) {
+  .review { padding: 2rem; }
 }
 .review:hover {
   border-color: var(--orange);

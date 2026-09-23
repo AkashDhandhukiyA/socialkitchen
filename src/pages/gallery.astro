@@ -2,25 +2,11 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Navbar     from '../components/Navbar.astro';
 import Footer     from '../components/Footer.astro';
+import PageHero   from '../components/shared/PageHero.astro';
+import CTASection from '../components/shared/CTASection.astro';
 
-const ambienceImages = [
-  { src: '/images/hero.jpg',            alt: 'Main dining hall',   size: 'large' },
-  { src: '/images/interior-bar.jpg',    alt: 'The blue bar',       size: '' },
-  { src: '/images/interior-booth.jpg',  alt: 'Blue booth seating', size: '' },
-  { src: '/images/interior-floral.jpg', alt: 'Floral pink wall',   size: 'wide' },
-];
-
-const foodImages = [
-  { src: '/images/food-biryani.jpg',    alt: 'Veg Biryani',           caption: 'Veg Dum Biryani',           size: 'tall' },
-  { src: '/images/food-soup.jpg',       alt: 'Manchow Soup',          caption: 'Veg Manchow Soup',          size: '' },
-  { src: '/images/food-jeera-rice.jpg', alt: 'Jeera Rice',            caption: 'Jeera Rice',                size: '' },
-  { src: '/images/food-naan.jpg',       alt: 'Butter Naan',           caption: 'Butter Naan',               size: 'wide' },
-  { src: '/images/food-chole.jpg',      alt: 'Chole with Rice',       caption: 'Chole with Jeera Rice',     size: '' },
-  { src: '/images/food-pasta.jpg',      alt: 'Alfredo Pasta',         caption: 'Creamy Alfredo Pasta',      size: '' },
-  { src: '/images/food-sushi.jpg',      alt: 'Sushi Platter',         caption: 'Veg Sushi Platter',         size: '' },
-  { src: '/images/dessert-cake.jpg',    alt: 'Chocolate Cake',        caption: 'Chocolate Celebration Cake',size: 'tall' },
-  { src: '/images/facade.jpg',          alt: 'Restaurant Facade',     caption: 'The Social Kitcchen',       size: '' },
-];
+import GalleryAmbience from '../components/gallery/GalleryAmbience.astro';
+import GalleryFood     from '../components/gallery/GalleryFood.astro';
 ---
 <BaseLayout
   title="Gallery — The Social Kitcchen Vapi"
@@ -28,72 +14,19 @@ const foodImages = [
 >
   <Navbar />
 
-  <section class="page-hero">
-    <div class="container">
-      <div class="page-hero-inner">
-        <div class="page-hero-crumb">
-          <a href="/">Home</a>
-          <span>/</span>
-          <span>Gallery</span>
-        </div>
-        <h1 class="page-hero-title">Our Gallery</h1>
-        <p class="page-hero-desc">
-          A visual journey through our space, our dishes and our people.
-        </p>
-      </div>
-    </div>
-  </section>
+  <PageHero 
+    title="Our Gallery" 
+    breadcrumbText="Gallery" 
+    desc="A visual journey through our space, our dishes and our people." 
+  />
 
-  <section class="section bg-white">
-    <div class="container">
-      <div class="section-header center">
-        <span class="label">The Space</span>
-        <h2 class="section-title">Our ambience.</h2>
-        <p class="section-sub">
-          Blue patterned bar, floral bougainvillea wall, mustard accents — every corner designed to delight.
-        </p>
-      </div>
+  <GalleryAmbience />
+  <GalleryFood />
 
-      <div class="ambience-grid">
-        {ambienceImages.map(img => (
-          <div class:list={['ambience-item', img.size]}>
-            <img src={img.src} alt={img.alt} loading="lazy" />
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="section bg-cream">
-    <div class="container">
-      <div class="section-header center">
-        <span class="label">The Food</span>
-        <h2 class="section-title">From our kitchen.</h2>
-        <p class="section-sub">Every dish photographed fresh off the pan.</p>
-      </div>
-
-      <div class="gallery-grid">
-        {foodImages.map(img => (
-          <div class:list={['gallery-item', img.size]}>
-            <img src={img.src} alt={img.alt} loading="lazy" />
-            <div class="gallery-cap">{img.caption}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="section bg-white">
-    <div class="container">
-      <div class="cta-block">
-        <h3>Liked what you saw?</h3>
-        <p>Book a table and experience it for yourself.</p>
-        <div class="cta-actions">
-          <a href="/reservations" class="btn btn-orange btn-lg">Reserve a Table</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <CTASection 
+    title="Liked what you saw?" 
+    sub="Book a table and experience it for yourself." 
+  />
 
   <Footer />
 </BaseLayout>
