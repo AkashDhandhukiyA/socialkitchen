@@ -1,0 +1,45 @@
+---
+const reviews = [
+  {
+    name: 'Priya S.',
+    rating: 5,
+    text: 'Paneer Butter Masala was rich and creamy — exactly how it should be. Delivered piping hot in 30 minutes.',
+  },
+  {
+    name: 'Rahul M.',
+    rating: 4,
+    text: 'Ordered Paneer Chilli Dry and Veg Manchurian. Good quantity, great taste. Will order again.',
+  },
+  {
+    name: 'Aisha K.',
+    rating: 5,
+    text: 'Called for Jain Dal Tadka — they made it without onion-garlic, no fuss. Really appreciate it.',
+  },
+];
+---
+<section id="reviews" class="section reviews-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Reviews</span>
+      <h2 class="section-title">Loved by Vapi</h2>
+      <p class="section-sub">4.0★ average from 69+ delivery reviews.</p>
+    </div>
+
+    <div class="reviews-grid">
+      {reviews.map(r => (
+        <div class="review-card">
+          <div class="review-stars">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <span class={i < r.rating ? '' : 'empty'}>★</span>
+            ))}
+          </div>
+          <p class="review-text">"{r.text}"</p>
+          <div class="review-footer">
+            <div class="review-avatar">{r.name.charAt(0)}</div>
+            <span class="review-name">{r.name}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

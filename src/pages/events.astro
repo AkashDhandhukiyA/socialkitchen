@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar     from '../components/Navbar.astro';
+import Footer     from '../components/Footer.astro';
+import Icon       from '../components/Icon.astro';
+
+const events = [
+  { icon: 'cake',  title: 'Birthday Celebrations', desc: 'Custom cakes, balloon décor and a dedicated host for your special day.',  img: '/images/dessert-cake.jpg',    guests: '10–40 guests', duration: '2–3 hours', price: 'From ₹8,000' },
+  { icon: 'work',  title: 'Corporate Dinners',     desc: 'Quiet private room, projector setup and set menus tailored for teams.',  img: '/images/interior-booth.jpg',  guests: '15–50 guests', duration: '2–4 hours', price: 'From ₹12,000' },
+  { icon: 'heart', title: 'Anniversaries',         desc: 'Candle-lit tables, curated menus and romantic music for two.',            img: '/images/interior-floral.jpg', guests: '2–20 guests',  duration: '2 hours',   price: 'From ₹3,000' },
+];
+
+const packages = [
+  { icon: 'dish',  title: 'Set Menus',   desc: 'Vegetarian set menus with starters, mains, breads and dessert.' },
+  { icon: 'spark', title: 'Custom Décor', desc: 'Balloons, flowers and lights arranged based on your theme.' },
+  { icon: 'award', title: 'Music & AV',   desc: 'Sound system, projector and mic available for speeches.' },
+];
+---
+<BaseLayout
+  title="Events & Private Dining — The Social Kitcchen Vapi"
+  description="Host birthdays, corporate dinners and anniversaries at The Social Kitcchen Vapi. Private rooms and pure-veg set menus available."
+>
+  <Navbar />
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-inner">
+        <div class="page-hero-crumb">
+          <a href="/">Home</a>
+          <span>/</span>
+          <span>Events</span>
+        </div>
+        <h1 class="page-hero-title">Events & Private Dining</h1>
+        <p class="page-hero-desc">
+          From intimate anniversaries to corporate dinners — we make every occasion memorable.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container">
+      <div class="events-grid">
+        {events.map(e => (
+          <div class="event">
+            <img src={e.img} alt={e.title} class="event-image" />
+            <div class="event-body">
+              <div class="event-icon"><Icon name={e.icon} size={24} /></div>
+              <h3 class="event-title">{e.title}</h3>
+              <p class="event-desc">{e.desc}</p>
+              <div class="event-meta">
+                <div class="event-meta-item">
+                  <span class="event-meta-label">Capacity</span>
+                  <strong>{e.guests}</strong>
+                </div>
+                <div class="event-meta-item">
+                  <span class="event-meta-label">Duration</span>
+                  <strong>{e.duration}</strong>
+                </div>
+                <div class="event-meta-item">
+                  <span class="event-meta-label">Starting</span>
+                  <strong>{e.price}</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-cream">
+    <div class="container">
+      <div class="section-header center">
+        <span class="label">What We Offer</span>
+        <h2 class="section-title">Event packages include.</h2>
+      </div>
+
+      <div class="feature-strip">
+        {packages.map(p => (
+          <div class="feature-strip-item">
+            <div class="feature-strip-icon"><Icon name={p.icon} /></div>
+            <div>
+              <div class="feature-strip-title">{p.title}</div>
+              <div class="feature-strip-desc">{p.desc}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container">
+      <div class="cta-block">
+        <h3>Plan your event.</h3>
+        <p>Call us or send an enquiry — we'll help design the perfect celebration.</p>
+        <div class="cta-actions">
+          <a href="tel:+919000000000" class="btn btn-orange btn-lg">Call +91 90000 00000</a>
+          <a href="/contact" class="btn btn-outline-light btn-lg">Send Enquiry</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

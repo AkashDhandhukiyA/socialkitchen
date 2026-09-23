@@ -1,0 +1,42 @@
+---
+const features = [
+  { icon: '🔥', title: 'Cooked to Order', desc: 'Nothing pre-made. Every dish hits the wok when you order.' },
+  { icon: '🥬', title: 'Jain Available',  desc: 'No onion-garlic preparations on request — same bold taste.' },
+  { icon: '🛵', title: 'Hot Delivery',    desc: 'Carefully packed, delivered fast across Vapi.' },
+  { icon: '💰', title: 'Honest Pricing',  desc: 'Generous portions, quality ingredients, fair prices.' },
+];
+---
+<section id="about" class="section about-section">
+  <div class="container about-grid">
+    <div class="about-image-wrap">
+      <img src="/images/about.jpg" alt="Chef preparing paneer dish at The Social Kitchen" class="about-image" />
+      <div class="about-badge">
+        <div class="about-badge-value">100%</div>
+        <div class="about-badge-label">Fresh ingredients, no shortcuts.</div>
+      </div>
+    </div>
+
+    <div class="about-body">
+      <span class="eyebrow">Our Story</span>
+      <h2 class="section-title">A Delivery Kitchen Built on Flavour</h2>
+      <p>
+        The Social Kitchen is a <strong>delivery-only</strong> kitchen based in Vapi, near Pramukh Nissan on NH-48.
+        We focus on what matters: bold, freshly cooked food that arrives hot.
+      </p>
+      <p>
+        Our menu leans into paneer — from buttery North Indian gravies to Sichuan-style Kung Pao —
+        alongside much-loved Indian-Chinese and comfort classics. Jain preparations are always available.
+      </p>
+
+      <div class="about-features">
+        {features.map(f => (
+          <div>
+            <div class="about-feature-icon">{f.icon}</div>
+            <h4 class="about-feature-title">{f.title}</h4>
+            <p class="about-feature-desc">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

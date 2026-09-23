@@ -1,0 +1,233 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar     from '../components/Navbar.astro';
+import Footer     from '../components/Footer.astro';
+import Icon       from '../components/Icon.astro';
+
+const features = [
+  { icon: 'leaf',  title: '100% Pure Veg',     desc: 'Every dish is completely vegetarian — including Jain options.' },
+  { icon: 'chef',  title: 'Cooked to Order',   desc: 'Nothing sits under a heat lamp. Every dish starts when you order.' },
+  { icon: 'fork',  title: 'Multi-Cuisine Menu',desc: 'North Indian, Indo-Chinese, Italian pasta, and Japanese sushi.' },
+  { icon: 'cake',  title: 'Events & Parties',  desc: 'Dedicated private spaces for birthdays, anniversaries and corporate dinners.' },
+];
+
+
+
+const reviews = [
+  { name: 'Priya S.', rating: 5, role: 'Regular Guest',  text: 'The paneer butter masala is exceptional — rich, creamy and served hot. Beautiful blue interiors!' },
+  { name: 'Rahul M.', rating: 5, role: 'Verified Diner', text: 'Booked the private room for a birthday. Décor, service, food — everything was flawless.' },
+  { name: 'Aisha K.', rating: 4, role: 'Jain Diner',     text: 'They prepared Jain dal tadka without onion-garlic without any fuss. Same bold taste.' },
+];
+
+const events = [
+  { icon: 'cake', title: 'Birthday Celebrations', desc: 'Custom cakes, décor and a dedicated host for your special day.', img: '/images/dessert-cake.jpg',    meta: '10–40 guests' },
+  { icon: 'work', title: 'Corporate Dinners',     desc: 'Quiet private room, projectors and set menus for teams.',       img: '/images/interior-booth.jpg',  meta: '15–50 guests' },
+  { icon: 'heart',title: 'Anniversaries',         desc: 'Candle-lit corner tables, curated menus and romantic music.',   img: '/images/interior-floral.jpg', meta: '2–20 guests' },
+];
+---
+<BaseLayout
+  title="The Social Kitcchen — Pure Veg Restaurant in Vapi"
+  description="A modern pure vegetarian restaurant in Vapi serving paneer specials, Indian-Chinese, pasta and sushi. Dine-in & reservations."
+>
+  <Navbar />
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <span class="hero-kicker">Pure Veg · Vapi · Since 2022</span>
+
+          <h1 class="hero-title">
+            Where every meal<br/>
+            becomes a <em>memory.</em>
+          </h1>
+
+          <p class="hero-desc">
+            Bold paneer specials, Indian-Chinese favourites, creamy pastas and
+            authentic sushi — served in a vibrant blue-and-brass space.
+          </p>
+
+          <div class="hero-actions">
+            <a href="/reservations" class="btn btn-orange btn-lg">Book a Table</a>
+            <a href="/menu" class="btn btn-outline btn-lg">View Menu</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-image">
+            <img src="/images/hero.jpg" alt="The Social Kitcchen dining hall" />
+          </div>
+          <div class="hero-card">
+            <div class="hero-card-num">4.0★</div>
+            <div class="hero-card-label">Rated by our<br/>guests in Vapi</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOURS BAR -->
+  <section class="hours-bar">
+    <div class="container">
+      <div class="hours-bar-inner">
+        <div class="hours-item">
+          <div class="hours-icon"><Icon name="sun" /></div>
+          <div>
+            <div class="hours-label">Lunch Service</div>
+            <div class="hours-value">11:00 AM – 3:00 PM</div>
+          </div>
+        </div>
+        <div class="hours-item">
+          <div class="hours-icon"><Icon name="moon" /></div>
+          <div>
+            <div class="hours-label">Dinner Service</div>
+            <div class="hours-value">7:00 PM – 11:00 PM</div>
+          </div>
+        </div>
+        <div class="hours-item">
+          <div class="hours-icon"><Icon name="phone" /></div>
+          <div>
+            <div class="hours-label">Reservations</div>
+            <div class="hours-value">+91 90000 00000</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section bg-cream">
+    <div class="container">
+      <div class="section-header center">
+        <span class="label">Why Dine With Us</span>
+        <h2 class="section-title">An experience, not just a meal.</h2>
+        <p class="section-sub">
+          From the first greeting to the last bite — every detail matters.
+        </p>
+      </div>
+
+      <div class="grid-4">
+        {features.map(f => (
+          <div class="card">
+            <div class="card-icon"><Icon name={f.icon} size={24} /></div>
+            <h3 class="card-title">{f.title}</h3>
+            <p class="card-desc">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CHEF'S PICKS -->
+  
+
+  <!-- SPLIT FEATURE: OUR SPACE -->
+  <section class="section bg-blue-soft">
+    <div class="container">
+      <div class="split-feature">
+        <div class="split-feature-image">
+          <img src="/images/interior-bar.jpg" alt="The bar area at The Social Kitcchen" />
+        </div>
+        <div>
+          <span class="label">Our Space</span>
+          <h2 class="section-title">Designed for conversations.</h2>
+          <p class="section-sub">
+            We built The Social Kitcchen as a place where food, friends and
+            conversations flow freely — a space as vibrant as our flavours.
+          </p>
+          <p class="split-feature-quote">
+            "Good food, great company, and a room that feels like home —
+            that's The Social Kitcchen."
+          </p>
+          <div class="split-feature-label">The Social Kitcchen Team</div>
+          <div style="margin-top: 2rem;">
+            <a href="/about" class="btn btn-outline">Read Our Story →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTS -->
+  <section class="section bg-cream">
+    <div class="container">
+      <div class="section-header center">
+        <span class="label">Celebrate With Us</span>
+        <h2 class="section-title">Private dining & events.</h2>
+        <p class="section-sub">From birthdays to corporate dinners — we host it all.</p>
+      </div>
+
+      <div class="events-grid">
+        {events.map(e => (
+          <div class="event">
+            <img src={e.img} alt={e.title} class="event-image" />
+            <div class="event-body">
+              <div class="event-icon"><Icon name={e.icon} size={24} /></div>
+              <h3 class="event-title">{e.title}</h3>
+              <p class="event-desc">{e.desc}</p>
+              <div class="event-meta">
+                <div class="event-meta-item">
+                  <span class="event-meta-label">Capacity</span>
+                  <strong>{e.meta}</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="text-center mt-lg">
+        <a href="/events" class="btn btn-blue btn-lg">See All Events →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="section-header center">
+        <span class="label">Guest Reviews</span>
+        <h2 class="section-title">What our guests say.</h2>
+        <p class="section-sub">Real experiences from real diners.</p>
+      </div>
+
+      <div class="grid-3">
+        {reviews.map(r => (
+          <div class="review">
+            <div class="review-quote">"</div>
+            <div class="review-stars">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <span class={i < r.rating ? '' : 'empty'}>★</span>
+              ))}
+            </div>
+            <p class="review-text">{r.text}</p>
+            <div class="review-author">
+              <div class="review-avatar">{r.name.charAt(0)}</div>
+              <div>
+                <div class="review-name">{r.name}</div>
+                <div class="review-role">{r.role}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section bg-cream">
+    <div class="container">
+      <div class="cta-block">
+        <h3>Reserve your table tonight.</h3>
+        <p>Walk-ins welcome, but we recommend booking ahead — especially on weekends.</p>
+        <div class="cta-actions">
+          <a href="/reservations" class="btn btn-orange btn-lg">Book a Table</a>
+          <a href="tel:+919000000000" class="btn btn-outline-light btn-lg">Call +91 90000 00000</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

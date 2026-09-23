@@ -1,0 +1,61 @@
+:root {
+  /* Brand blue (from facade + bar) */
+  --blue:          #1E4FA8;
+  --blue-dark:     #0F2E6B;
+  --blue-deep:     #0A1F4D;
+  --blue-mid:      #2563C9;
+  --blue-soft:     #F3F7FE;
+  --blue-light:    #E5EDFB;
+
+  /* Brand orange (SOCIAL lettering) */
+  --orange:        #F26A1F;
+  --orange-dark:   #D4551A;
+  --orange-soft:   #FFF1E7;
+  --orange-light:  #FFB07A;
+
+  /* Mustard (chairs) */
+  --mustard:       #E5B83C;
+  --mustard-soft:  #FDF6E3;
+
+  /* Pink (floral wall) */
+  --pink:          #E85A8F;
+  --pink-soft:     #FDEBF2;
+
+  /* Neutrals */
+  --white:         #FFFFFF;
+  --cream:         #FAF7F0;
+  --off-white:     #FBFCFE;
+  --border:        #E4E8F0;
+  --border-dark:   #CBD3E0;
+
+  /* Text */
+  --charcoal:      #141B29;
+  --text-mid:      #4B5563;
+  --text-soft:     #6B7280;
+  --text-muted:    #9CA3AF;
+
+  /* Fonts */
+  --font-display: "Fraunces", "Playfair Display", Georgia, serif;
+  --font-body:    "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Radius */
+  --r-sm: 8px;
+  --r-md: 14px;
+  --r-lg: 22px;
+  --r-xl: 32px;
+  --r-pill: 9999px;
+
+  /* Shadows */
+  --sh-sm:  0 2px 8px rgba(20,27,41,0.05);
+  --sh-md:  0 8px 24px rgba(20,27,41,0.08);
+  --sh-lg:  0 20px 48px rgba(20,27,41,0.12);
+  --sh-xl:  0 24px 60px rgba(20,27,41,0.18);
+  --sh-blue:    0 12px 32px -8px rgba(30,79,168,0.4);
+  --sh-orange:  0 12px 32px -8px rgba(242,106,31,0.45);
+
+  /* Layout */
+  --container: 1200px;
+  --nav-h: 78px;
+
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}

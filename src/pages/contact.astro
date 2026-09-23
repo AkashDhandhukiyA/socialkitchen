@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar     from '../components/Navbar.astro';
+import Footer     from '../components/Footer.astro';
+import Icon       from '../components/Icon.astro';
+---
+<BaseLayout
+  title="Contact — The Social Kitcchen Vapi"
+  description="Call, message or visit The Social Kitcchen in Vapi. Pure veg restaurant open 7 days a week."
+>
+  <Navbar />
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-inner">
+        <div class="page-hero-crumb">
+          <a href="/">Home</a>
+          <span>/</span>
+          <span>Contact</span>
+        </div>
+        <h1 class="page-hero-title">Get in Touch</h1>
+        <p class="page-hero-desc">
+          Call us, send a message, or drop by — we'd love to host you.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container">
+      <div class="grid-2" style="align-items: stretch;">
+        <div class="info-panel">
+          <h2 class="info-panel-title">Contact Information</h2>
+
+          <div class="info-item">
+            <div class="info-icon"><Icon name="map" /></div>
+            <div>
+              <div class="info-label">Address</div>
+              <div class="info-value">
+                Shop 8 and 108, Shanti Complex,<br/>
+                Near Pramukh Nissan, NH-48,<br/>
+                Vapi, Gujarat
+              </div>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon"><Icon name="phone" /></div>
+            <div>
+              <div class="info-label">Phone</div>
+              <div class="info-value"><a href="tel:+919000000000">+91 90000 00000</a></div>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon"><Icon name="mail" /></div>
+            <div>
+              <div class="info-label">Email</div>
+              <div class="info-value"><a href="mailto:hello@thesocialkitcchen.in">hello@thesocialkitcchen.in</a></div>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon"><Icon name="clock" /></div>
+            <div>
+              <div class="info-label">Hours</div>
+              <div class="info-value">
+                Lunch 11:00 AM – 3:00 PM<br/>
+                Dinner 7:00 PM – 11:00 PM<br/>
+                Open all 7 days
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h2 class="form-title">Send Us a Message</h2>
+          <p class="form-desc">
+            Have a question, feedback, or event enquiry? We'll get back to you.
+          </p>
+
+          <form action="https://formspree.io/f/YOUR_ID" method="POST">
+            <div class="form-group">
+              <label class="form-label" for="name">Full Name</label>
+              <input id="name" type="text" name="name" required class="form-input" placeholder="Your name" />
+            </div>
+
+            <div class="form-row form-row-2">
+              <div class="form-group">
+                <label class="form-label" for="phone">Phone</label>
+                <input id="phone" type="tel" name="phone" required class="form-input" placeholder="+91 ..." />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">Email (optional)</label>
+                <input id="email" type="email" name="email" class="form-input" placeholder="you@example.com" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="subject">Subject</label>
+              <select id="subject" name="subject" class="form-input">
+                <option>General enquiry</option>
+                <option>Table reservation</option>
+                <option>Event booking</option>
+                <option>Jain / dietary request</option>
+                <option>Feedback</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="message">Your Message</label>
+              <textarea id="message" name="message" required class="form-input" placeholder="Tell us how we can help..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-orange btn-lg btn-block">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-cream">
+    <div class="container">
+      <div class="section-header center">
+        <span class="label">Find Us</span>
+        <h2 class="section-title">Visit The Social Kitcchen.</h2>
+        <p class="section-sub">We're located on NH-48 near Pramukh Nissan, Vapi.</p>
+      </div>
+
+      <div style="border-radius: 22px; overflow: hidden; box-shadow: var(--sh-md);">
+        <iframe
+          src="https://www.google.com/maps?q=Shanti+Complex+NH-48+Vapi&output=embed"
+          width="100%"
+          height="440"
+          style="border: 0; display: block;"
+          loading="lazy"
+          title="The Social Kitcchen location">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

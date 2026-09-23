@@ -1,0 +1,29 @@
+html {
+  /* Prevents iOS zoom on input focus + better base size on mobile */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-size: 15px;
+}
+@media (min-width: 640px) {
+  body { font-size: 16px; }
+}
+
+h1 { font-size: clamp(1.75rem, 6vw, 4.75rem); }
+h2 { font-size: clamp(1.5rem, 4.5vw, 3.5rem); }
+h3 { font-size: clamp(1.125rem, 2.5vw, 1.875rem); }
+h4 { font-size: 1.0625rem; }
+@media (min-width: 640px) {
+  h4 { font-size: 1.125rem; }
+}
+
+/* Prevent horizontal scroll on small screens */
+body {
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

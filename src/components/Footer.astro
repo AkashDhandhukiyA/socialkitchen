@@ -1,0 +1,92 @@
+---
+import Icon from './Icon.astro';
+
+const year = new Date().getFullYear();
+
+const exploreLinks = [
+  { href: '/#home',    label: 'Home' },
+  { href: '/#about',   label: 'About' },
+  { href: '/#gallery', label: 'Gallery' },
+  { href: '/#events',  label: 'Events' },
+  { href: '/#contact', label: 'Contact' },
+];
+
+const socials = [
+  { href: 'https://instagram.com',      label: 'Instagram', icon: 'ig' },
+  { href: 'https://facebook.com',       label: 'Facebook',  icon: 'fb' },
+  { href: 'https://wa.me/919000000000', label: 'WhatsApp',  icon: 'wa' },
+];
+---
+<footer class="foot">
+  <div class="foot-wrap">
+
+    <!-- Top row: Brand + quick info + socials -->
+    <div class="foot-top">
+
+      <!-- Brand -->
+      <a href="/#home" class="foot-brand">
+        <span class="foot-mark">S</span>
+        <span class="foot-brand-text">
+          <span class="foot-brand-name">The S<em>oo</em>cial Kitcchen</span>
+          <span class="foot-brand-sub">Pure Veg · Vapi · Since 2022</span>
+        </span>
+      </a>
+
+      <!-- Quick contact -->
+      <div class="foot-quick">
+        <a href="tel:+919000000000" class="foot-quick-item">
+          <Icon name="phone" size={16} />
+          <span>+91 90000 00000</span>
+        </a>
+        <span class="foot-quick-divider"></span>
+        <span class="foot-quick-item">
+          <Icon name="clock" size={16} />
+          <span>11 AM – 11 PM · Open All Days</span>
+        </span>
+      </div>
+
+      <!-- Socials -->
+      <div class="foot-socials">
+        {socials.map(s => (
+          <a
+            href={s.href}
+            class="foot-social"
+            aria-label={s.label}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon name={s.icon} size={17} />
+          </a>
+        ))}
+      </div>
+
+    </div>
+
+    <!-- Middle row: Links + newsletter -->
+    <div class="foot-mid">
+
+      <!-- Explore links -->
+      <nav class="foot-links" aria-label="Footer navigation">
+        {exploreLinks.map(l => (
+          <a href={l.href} class="foot-link">{l.label}</a>
+        ))}
+      </nav>
+
+      <!-- Newsletter / note -->
+      <p class="foot-note">
+        Fresh flavours, seasonal specials & private events — all made in-house, right here in Vapi.
+      </p>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="foot-bottom">
+      <span class="foot-copy">© {year} The Social Kitcchen · All rights reserved.</span>
+      <span class="foot-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </span>
+    </div>
+
+  </div>
+</footer>

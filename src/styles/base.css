@@ -1,0 +1,37 @@
+body {
+  background-color: var(--white);
+  color: var(--text-mid);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--blue-deep);
+}
+
+h1 { font-size: clamp(2.5rem, 6vw, 4.75rem); }
+h2 { font-size: clamp(2rem, 4.5vw, 3.5rem); }
+h3 { font-size: clamp(1.35rem, 2.5vw, 1.875rem); }
+h4 { font-size: 1.125rem; }
+
+p { line-height: 1.75; }
+
+::selection {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+::-webkit-scrollbar       { width: 10px; }
+::-webkit-scrollbar-track { background: var(--off-white); }
+::-webkit-scrollbar-thumb {
+  background: var(--blue);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--blue-dark); }

@@ -1,0 +1,121 @@
+---
+import { Astro } from 'astro';
+import Icon from './Icon.astro';
+
+const currentPath = Astro.url.pathname;
+
+const links = [
+  { href: '/',    label: 'Home' },
+  { href: '/about',   label: 'About' },
+  { href: '/gallery', label: 'Gallery' },
+  { href: '/events',  label: 'Events' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+<header class="nav" id="nav">
+  <div class="nav-inner">
+
+    <!-- Brand -->
+    <a href="/#home" class="nav-brand">
+      <span class="nav-mark"><span>S</span></span>
+      <span class="nav-brand-text">
+        <span class="nav-brand-name">The S<em>oo</em>cial Kitcchen</span>
+        <span class="nav-brand-sub">Pure Veg · Vapi</span>
+      </span>
+    </a>
+
+    <!-- Center pill links -->
+    <nav class="nav-pill" aria-label="Primary">
+      {links.map(l => (
+        <a
+          href={l.href}
+          class:list={['nav-link', { active: currentPath === l.href }]}
+        >
+          {l.label}
+        </a>
+      ))}
+    </nav>
+
+    <!-- Right actions -->
+    <div class="nav-actions">
+      <a href="tel:+919000000000" class="nav-icon-btn" aria-label="Call us">
+        <Icon name="phone" size={17} />
+      </a>
+
+      <a href="/reservations" class="nav-cta">
+        <span>Book a Table</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+        </svg>
+      </a>
+
+      <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile sheet -->
+<div class="nav-sheet" id="navSheet">
+  <div class="nav-sheet-inner">
+    {links.map(l => (
+      <a href={l.href} class="nav-sheet-link">
+        <span>{l.label}</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+        </svg>
+      </a>
+    ))}
+
+    <a href="/#contact" class="nav-sheet-cta">Book a Table</a>
+
+    <div class="nav-sheet-meta">
+      <a href="tel:+919000000000">
+        <Icon name="phone" size={15} />
+        <span>+91 90000 00000</span>
+      </a>
+      <div>
+        <Icon name="clock" size={15} />
+        <span>Lunch 11 AM · Dinner 7 PM</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const nav = document.getElementById('nav');
+  const burger = document.getElementById('navBurger');
+  const sheet = document.getElementById('navSheet');
+
+  const onScroll = () => {
+    if (window.scrollY > 12) nav?.classList.add('is-scrolled');
+    else nav?.classList.remove('is-scrolled');
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  burger?.addEventListener('click', () => {
+    const isOpen = burger.classList.toggle('is-open');
+    sheet?.classList.toggle('is-open', isOpen);
+    burger.setAttribute('aria-expanded', String(isOpen));
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  sheet?.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      burger?.classList.remove('is-open');
+      sheet?.classList.remove('is-open');
+      document.body.style.overflow = '';
+    });
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      burger?.classList.remove('is-open');
+      sheet?.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+  });
+</script>

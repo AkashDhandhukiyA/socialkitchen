@@ -1,0 +1,141 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar     from '../components/Navbar.astro';
+import Footer     from '../components/Footer.astro';
+import Icon       from '../components/Icon.astro';
+
+const values = [
+  { icon: 'leaf',   title: '100% Pure Veg',    desc: 'Every dish is completely vegetarian — including Jain options.' },
+  { icon: 'chef',   title: 'Cooked to Order',  desc: 'Nothing sits under a heat lamp. Every dish starts when you order.' },
+  { icon: 'users',  title: 'Warm Hospitality', desc: 'Our team treats every guest like family — that is the difference.' },
+  { icon: 'award',  title: 'Honest Pricing',   desc: 'Generous portions at fair prices. No inflated markups.' },
+];
+
+const stats = [
+  { value: '4.0★', label: 'Guest Rating' },
+  { value: '60+',  label: 'Seats' },
+  { value: '07',   label: 'Menu Categories' },
+  { value: '02',   label: 'Private Rooms' },
+];
+---
+<BaseLayout
+  title="About — The Social Kitcchen Vapi"
+  description="Learn about The Social Kitcchen — a modern pure-veg restaurant in Vapi serving bold paneer specials, Indian-Chinese, pasta and sushi."
+>
+  <Navbar />
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-inner">
+        <div class="page-hero-crumb">
+          <a href="/">Home</a>
+          <span>/</span>
+          <span>About</span>
+        </div>
+        <h1 class="page-hero-title">Our Story</h1>
+        <p class="page-hero-desc">
+          A restaurant built on bold flavours, warm hospitality and honest cooking.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container">
+      <div class="split-feature">
+        <div>
+          <span class="label">Since Day One</span>
+          <h2 class="section-title">Cooking with care,<br/>serving with pride.</h2>
+          <p class="section-sub" style="margin-bottom: 1rem;">
+            The Social Kitcchen started with one simple idea: make food that tastes
+            like it was cooked at home — but with the boldness of a restaurant kitchen.
+          </p>
+          <p class="section-sub" style="margin-bottom: 1rem;">
+            We're located in the heart of Vapi, near Pramukh Nissan on NH-48.
+            Our striking blue-and-brass interiors, floral bougainvillea wall and
+            mustard-yellow chairs make every visit memorable.
+          </p>
+          <p class="section-sub">
+            Our menu spans paneer specials, Indo-Chinese, North Indian curries,
+            biryani, Italian pasta and Japanese sushi — all 100% vegetarian.
+            Jain preparations are always available.
+          </p>
+        </div>
+
+        <div class="split-feature-image">
+          <img src="/images/interior-floral.jpg" alt="The bougainvillea wall at The Social Kitcchen" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-cream">
+    <div class="container">
+      <div class="section-header center">
+        <span class="label">Our Values</span>
+        <h2 class="section-title">What we stand for.</h2>
+        <p class="section-sub">Four principles that guide every plate we serve.</p>
+      </div>
+
+      <div class="grid-4">
+        {values.map(v => (
+          <div class="card">
+            <div class="card-icon"><Icon name={v.icon} size={24} /></div>
+            <h3 class="card-title">{v.title}</h3>
+            <p class="card-desc">{v.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight bg-white">
+    <div class="container">
+      <div class="grid-4" style="text-align: center;">
+        {stats.map(s => (
+          <div>
+            <div style="font-family: var(--font-display); font-size: 3rem; font-weight: 800; color: var(--blue); line-height: 1;">{s.value}</div>
+            <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.75rem; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 600;">{s.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-blue-soft">
+    <div class="container">
+      <div class="split-feature">
+        <div class="split-feature-image">
+          <img src="/images/interior-bar.jpg" alt="The bar area" />
+        </div>
+        <div>
+          <span class="label">Our Space</span>
+          <h2 class="section-title">Designed for conversations.</h2>
+          <p class="section-sub">
+            A vibrant dining room, hand-detailed blue bar, warm brass accents and
+            floral murals — we designed every corner to make you want to linger.
+          </p>
+          <p class="split-feature-quote">
+            "We built The Social Kitcchen as a place where food, friends and
+            conversations flow freely — a space as vibrant as our flavours."
+          </p>
+          <div class="split-feature-label">The Social Kitcchen Team</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-cream">
+    <div class="container">
+      <div class="cta-block">
+        <h3>Come taste the difference.</h3>
+        <p>Book a table and experience freshly cooked food in a stunning setting.</p>
+        <div class="cta-actions">
+          <a href="/reservations" class="btn btn-orange btn-lg">Reserve a Table</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

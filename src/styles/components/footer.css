@@ -1,0 +1,295 @@
+/* ============================================
+   REFINED FOOTER — Flat cream, better typography
+   ============================================ */
+
+.foot {
+  width: 100%;
+  background: #FAF7F0;
+  border-top: 1px solid #ECE6DA;
+  padding: 0;
+  position: relative;
+}
+
+.foot-wrap {
+  max-width: 1240px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+@media (min-width: 768px) {
+  .foot-wrap { padding-inline: 40px; }
+}
+
+/* ============================================
+   TOP ROW — Brand + contact + socials
+   ============================================ */
+.foot-top {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 26px 0;
+  border-bottom: 1px solid #ECE6DA;
+  align-items: flex-start;
+}
+
+@media (min-width: 900px) {
+  .foot-top {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 28px 0;
+  }
+}
+
+/* ---------- Brand ---------- */
+.foot-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.foot-mark {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1E4FA8 0%, #0F2E6B 100%);
+  display: grid;
+  place-items: center;
+  color: #F26A1F;
+  font-family: var(--font-display, Georgia, serif);
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 1;
+  box-shadow: 0 6px 16px -6px rgba(30,79,168,0.45);
+  transition: transform 400ms cubic-bezier(.22,.61,.36,1);
+}
+.foot-brand:hover .foot-mark { transform: rotate(-5deg) scale(1.06); }
+
+.foot-brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.foot-brand-name {
+  font-family: var(--font-display, Georgia, serif);
+  font-weight: 800;
+  font-size: 17px;
+  letter-spacing: -0.02em;
+  color: #0F2E6B;
+  white-space: nowrap;
+}
+.foot-brand-name em { font-style: normal; color: #F26A1F; }
+
+.foot-brand-sub {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #94A3B8;
+  font-weight: 700;
+  margin-top: 4px;
+  white-space: nowrap;
+}
+
+/* ---------- Quick contact ---------- */
+.foot-quick {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  flex: 1;
+  justify-content: center;
+}
+
+.foot-quick-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #4B5563;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 220ms ease;
+}
+.foot-quick-item svg { color: #F26A1F; flex-shrink: 0; }
+.foot-quick-item:hover { color: #0F2E6B; }
+
+.foot-quick-divider {
+  width: 1px;
+  height: 16px;
+  background: #ECE6DA;
+  display: none;
+}
+@media (min-width: 900px) {
+  .foot-quick-divider { display: inline-block; }
+}
+
+/* ---------- Socials ---------- */
+.foot-socials {
+  display: flex;
+  gap: 9px;
+  flex-shrink: 0;
+}
+
+.foot-social {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #FFFFFF;
+  border: 1px solid #ECE6DA;
+  color: #4B5563;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.22,.61,.36,1);
+}
+.foot-social svg { display: block; width: 16px; height: 16px; }
+
+.foot-social[aria-label="Instagram"]:hover {
+  background: linear-gradient(45deg, #f09433 0%, #dc2743 55%, #bc1888 100%);
+  border-color: transparent;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -8px rgba(220,39,67,0.55);
+}
+
+.foot-social[aria-label="Facebook"]:hover {
+  background: #1877F2;
+  border-color: #1877F2;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -8px rgba(24,119,242,0.55);
+}
+
+.foot-social[aria-label="WhatsApp"]:hover {
+  background: #25D366;
+  border-color: #25D366;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -8px rgba(37,211,102,0.55);
+}
+
+/* ============================================
+   MIDDLE ROW — Links + note
+   ============================================ */
+.foot-mid {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 22px 0;
+  border-bottom: 1px solid #ECE6DA;
+}
+
+@media (min-width: 900px) {
+  .foot-mid {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 22px 0;
+  }
+}
+
+/* ---------- Links ---------- */
+.foot-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  align-items: center;
+}
+
+.foot-link {
+  position: relative;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #4B5563;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: color 220ms ease;
+  white-space: nowrap;
+}
+.foot-link::after {
+  content: '';
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 3px;
+  height: 1.5px;
+  background: #F26A1F;
+  border-radius: 2px;
+  transform: scaleX(0);
+  transition: transform 300ms cubic-bezier(.22,.61,.36,1);
+}
+.foot-link:hover {
+  color: #0F2E6B;
+}
+.foot-link:hover::after { transform: scaleX(1); }
+
+/* ---------- Note ---------- */
+.foot-note {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #6B7280;
+  max-width: 42ch;
+  margin: 0;
+}
+
+/* ============================================
+   BOTTOM BAR
+   ============================================ */
+.foot-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  padding: 18px 0 22px;
+  font-size: 12.5px;
+  color: #94A3B8;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+
+@media (min-width: 900px) {
+  .foot-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    padding: 18px 0 22px;
+  }
+}
+
+.foot-copy {
+  font-size: 12.5px;
+  color: #94A3B8;
+}
+
+.foot-legal {
+  display: flex;
+  gap: 22px;
+}
+.foot-legal a {
+  font-size: 12.5px;
+  color: #94A3B8;
+  text-decoration: none;
+  transition: color 220ms ease;
+}
+.foot-legal a:hover { color: #F26A1F; }
+
+/* ============================================
+   MOBILE TWEAKS
+   ============================================ */
+@media (max-width: 899px) {
+  .foot-quick {
+    justify-content: flex-start;
+  }
+  .foot-socials {
+    margin-top: 4px;
+  }
+  .foot-note {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,15 @@
+@import "./variables.css";
+@import "./reset.css";
+@import "./base.css";
+@import "./utilities.css";
+
+@import "./components/navbar.css";
+@import "./components/buttons.css";
+@import "./components/contact.css";
+
+@import "./components/hero.css";
+@import "./components/cards.css";
+@import "./components/gallery.css";
+@import "./components/events.css";
+@import "./components/forms.css";
+@import "./components/footer.css";
