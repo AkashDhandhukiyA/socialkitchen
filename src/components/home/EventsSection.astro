@@ -19,7 +19,7 @@ const events = [
       <div class="slider-track" id="events-slider">
         {events.map((e, i) => (
           <div class={`event slide hover-lift animate-fade-up delay-${(i + 1) * 100}`}>
-            <img src={e.img} alt={e.title} class="event-image" / width="800" height="600">
+            <img src={e.img} alt={e.title} class="event-image"  width="800" height="600" />
             <div class="event-body">
               <div class="event-icon"><Icon name={e.icon} size={24} /></div>
               <h3 class="event-title">{e.title}</h3>
