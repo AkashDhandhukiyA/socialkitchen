@@ -22,7 +22,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://thesocia
 const schema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "Social Kitchen",
+  "name": "The Social Kitcchen",
   "image": new URL(image, Astro.site),
   "@id": Astro.site,
   "url": Astro.site,
@@ -49,6 +49,7 @@ const schema = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="/images/logo.png" />
+    <link rel="llms" href="/llms.txt" />
     
     <!-- Primary Meta Tags -->
     <title>{title}</title>

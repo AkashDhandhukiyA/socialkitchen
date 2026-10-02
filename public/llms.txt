@@ -1,0 +1,29 @@
+# The Social Kitcchen
+
+The Social Kitcchen is Vapi's premier destination for pure vegetarian dining.
+
+## About Us
+We believe that vegetarian food shouldn't be boring. Our expert chefs have crafted a dynamic, multi-cuisine menu that brings bold flavors, fresh ingredients, and exceptional culinary techniques to every single plate. 
+
+## Menu Categories
+- North Indian Curries (including Paneer specials)
+- Indo-Chinese Favorites
+- Italian Pasta
+- Japanese Sushi
+
+## Dietary Options
+- 100% Pure Vegetarian
+- Jain-friendly options available (strictly without onion or garlic)
+
+## Dining & Events
+- Dine-in
+- Private Dining Rooms
+- Birthday Celebrations
+- Corporate Dinners
+- Anniversaries
+
+## Location & Contact
+Address: 123 Your Street Address, Your City, Postal Code, IN
+Phone: +91-7567640841
+Hours: Lunch 11:00 AM - 3:00 PM | Dinner 7:00 PM - 11:00 PM (Open 7 days a week)
+Walk-ins welcome, reservations recommended.
