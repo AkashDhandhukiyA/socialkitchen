@@ -13,15 +13,23 @@ const {
 ---
 <section class="section bg-cream">
   <div class="container">
-    <div class="cta-block glass-panel hover-lift text-center" style="padding: 4rem 2rem; border-radius: var(--r-xl); background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.6)); border: 1px solid var(--white);">
-      <h2 class="section-title" style="margin-bottom: 1rem;">{title}</h2>
-      <p class="section-sub" style="margin-inline: auto; max-width: 32rem;">{sub}</p>
-      <div class="cta-actions" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+    <div class="cta-block glass-panel hover-lift text-center ext-style-61">
+      <h2 class="section-title ext-style-62">{title}</h2>
+      <p class="section-sub ext-style-63">{sub}</p>
+      <div class="cta-actions ext-style-64">
         <a href="/reservations" class="btn btn-orange btn-lg">Book a Table</a>
-        <a href="/contact" class="btn btn-blue btn-lg" style="display: flex; align-items: center; gap: 0.5rem;">
+        <a href="/contact" class="btn btn-blue btn-lg ext-style-65">
           <Icon name="phone" size={18} /> Contact Us
         </a>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+.ext-style-61 { padding: 4rem 2rem; border-radius: var(--r-xl); background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.6)); border: 1px solid var(--white); }
+.ext-style-62 { margin-bottom: 1rem; }
+.ext-style-63 { margin-inline: auto; max-width: 32rem; }
+.ext-style-64 { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
+.ext-style-65 { display: flex; align-items: center; gap: 0.5rem; }
+</style>

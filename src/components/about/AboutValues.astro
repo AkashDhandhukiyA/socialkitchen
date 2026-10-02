@@ -18,14 +18,22 @@ const values = [
 
     <div class="grid-4">
       {values.map((v, i) => (
-        <div class={`card hover-lift animate-fade-up delay-${(i + 1) * 100}`} style="background: var(--white); border: 1px solid rgba(0,0,0,0.05); text-align: center; padding: 2.5rem 1.5rem; border-radius: var(--r-xl); box-shadow: var(--sh-md);">
-          <div style="border-radius: 50%; overflow: hidden; width: 100px; height: 100px; margin: 0 auto 1.5rem auto; box-shadow: var(--sh-md);">
-            <img src={v.img} alt={v.title} style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"  width="800" height="600" />
+        <div class={`card hover-lift animate-fade-up delay-${(i + 1) * 100}`} class="ext-style-29">
+          <div class="ext-style-30">
+            <img src={v.img} alt={v.title} class="ext-style-31" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"  width="800" height="600" />
           </div>
-          <h3 class="card-title" style="font-size: 1.25rem; margin-bottom: 0.75rem;">{v.title}</h3>
-          <p class="card-desc" style="color: var(--text-soft); line-height: 1.6;">{v.desc}</p>
+          <h3 class="card-title ext-style-27">{v.title}</h3>
+          <p class="card-desc ext-style-28">{v.desc}</p>
         </div>
       ))}
     </div>
   </div>
 </section>
+
+<style>
+.ext-style-27 { font-size: 1.25rem; margin-bottom: 0.75rem; }
+.ext-style-28 { color: var(--text-soft); line-height: 1.6; }
+.ext-style-29 { background: var(--white); border: 1px solid rgba(0,0,0,0.05); text-align: center; padding: 2.5rem 1.5rem; border-radius: var(--r-xl); box-shadow: var(--sh-md); }
+.ext-style-30 { border-radius: 50%; overflow: hidden; width: 100px; height: 100px; margin: 0 auto 1.5rem auto; box-shadow: var(--sh-md); }
+.ext-style-31 { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+</style>
