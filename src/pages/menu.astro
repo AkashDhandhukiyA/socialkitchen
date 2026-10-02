@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar     from '../components/Navbar.astro';
+import Footer     from '../components/Footer.astro';
+import PageHero   from '../components/shared/PageHero.astro';
+import CTASection from '../components/shared/CTASection.astro';
+---
+<BaseLayout
+  title="Our Menu | The Social Kitcchen - Pure Veg in Vapi"
+  description="Explore the multi-cuisine menu at The Social Kitcchen. Enjoy our pure veg North Indian, Indo-Chinese, Italian pasta, and Japanese sushi."
+>
+  <Navbar />
+
+  <PageHero 
+    title="Our Menu" 
+    breadcrumbText="Menu" 
+    desc="A multi-cuisine experience with bold flavours and fresh ingredients." 
+  />
+
+  <section class="section bg-white text-center">
+    <div class="container" style="padding-block: 4rem;">
+      <h2 class="section-title">Menu Coming Soon</h2>
+      <p class="section-sub" style="margin-inline: auto; max-width: 32rem; margin-top: 1rem; color: var(--text-soft);">
+        We are currently updating our digital menu. Please check back later, or contact us directly to inquire about our daily specials.
+      </p>
+    </div>
+  </section>
+
+  <CTASection 
+    title="Ready to dine with us?" 
+    sub="Book a table and experience freshly cooked food in a stunning setting." 
+  />
+
+  <Footer />
+</BaseLayout>
