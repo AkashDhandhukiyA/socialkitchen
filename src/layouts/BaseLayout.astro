@@ -4,8 +4,42 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description: string;
+  image?: string;
+  keywords?: string;
 }
-const { title, description } = Astro.props;
+
+const { 
+  title, 
+  description, 
+  image = "/images/logo.png",
+  keywords = "Social Kitchen, food, recipes, cooking, social dining, community kitchen"
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://thesocialkitchen.in');
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Social Kitchen",
+  "image": new URL(image, Astro.site),
+  "@id": Astro.site,
+  "url": Astro.site,
+  "telephone": "+91-XXXXXXXXXX",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Your Street Address",
+    "addressLocality": "Your City",
+    "postalCode": "Your Postal Code",
+    "addressCountry": "IN"
+  },
+  "sameAs": [
+    "https://www.facebook.com/yourprofile",
+    "https://twitter.com/yourprofile",
+    "https://www.instagram.com/yourprofile",
+    "https://www.linkedin.com/company/yourprofile",
+    "https://www.youtube.com/channel/yourprofile"
+  ]
+};
 ---
 <!doctype html>
 <html lang="en">
@@ -13,15 +47,65 @@ const { title, description } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="/images/logo.png" />
-    <title>{title}</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>{title} | Social Kitchen - Delicious Recipes & Social Dining</title>
+    <meta name="title" content={`${title} | Social Kitchen - Delicious Recipes & Social Dining`} />
     <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
 
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.site)} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, Astro.site)} />
+
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+    <!-- Preconnect & Fonts (Render Blocking Deferred) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
+      media="print" onload="this.media='all'"
     />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,500;1,9..144,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    </noscript>
+
+    <!-- Analytics & Pixel Tracking (Placeholders) -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    <script is:inline>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', 'YOUR_PIXEL_ID');
+      fbq('track', 'PageView');
+    </script>
   </head>
   <body>
     <slot />

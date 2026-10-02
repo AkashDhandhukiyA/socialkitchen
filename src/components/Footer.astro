@@ -18,8 +18,11 @@ const visitLinks = [
 
 const socials = [
   { href: '/contact',                   label: 'Contact Us',icon: 'phone' },
-  { href: 'https://instagram.com',      label: 'Instagram', icon: 'ig' },
-  { href: 'https://facebook.com',       label: 'Facebook',  icon: 'fb' },
+  { href: 'https://instagram.com/yourprofile',      label: 'Instagram', icon: 'ig' },
+  { href: 'https://facebook.com/yourprofile',       label: 'Facebook',  icon: 'fb' },
+  { href: 'https://twitter.com/yourprofile',        label: 'X (Twitter)', icon: 'x' },
+  { href: 'https://linkedin.com/company/yourprofile',label: 'LinkedIn', icon: 'linkedin' },
+  { href: 'https://youtube.com/c/yourprofile',      label: 'YouTube', icon: 'youtube' },
   { href: 'https://wa.me/07567640841', label: 'WhatsApp',  icon: 'wa' },
 ];
 ---
@@ -28,7 +31,7 @@ const socials = [
     
     <div class="foot-main">
       
-      <!-- Column 1: Brand -->
+      <!-- Column 1: Brand & Address -->
       <div class="foot-brand-col">
         <a href="/" class="foot-brand">
           <span class="foot-brand-name">The S<em>oo</em>cial Kitcchen</span>
@@ -36,6 +39,10 @@ const socials = [
         <p class="foot-desc">
           Bold flavours, warm hospitality, and a room designed for conversations. Fresh paneer specials & Asian favourites made daily.
         </p>
+        <div class="foot-address" style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+          <strong>Address:</strong> 123 Your Street Address, Your City, Postal Code, IN<br/>
+          <strong>Phone:</strong> <a href="tel:+91XXXXXXXXXX" style="color: inherit; text-decoration: none;">+91-XXXXXXXXXX</a>
+        </div>
       </div>
 
       <!-- Column 2: Explore -->
