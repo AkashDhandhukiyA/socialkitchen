@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import PageHero from '../components/shared/PageHero.astro';
+---
+
+<BaseLayout 
+  title="Terms of Service — The Social Kitcchen"
+  description="Terms of Service for The Social Kitcchen restaurant in Vapi."
+>
+  <Navbar />
+  <PageHero title="Terms of Service" breadcrumbText="Terms of Service" />
+  
+  <section class="section">
+    <div class="container" style="max-width: 800px; margin: 0 auto; line-height: 1.8;">
+      <h2>1. Acceptance of Terms</h2>
+      <p>By accessing and using our website and services, you accept and agree to be bound by the terms and provision of this agreement.</p>
+      
+      <h2>2. Reservations and Cancellations</h2>
+      <p>We reserve the right to cancel or modify reservations where it appears that a customer has provided an invalid phone number or email.</p>
+      
+      <h2>3. Modifications</h2>
+      <p>We reserve the right to change these conditions from time to time as we see fit and your continued use of the site will signify your acceptance of any adjustment to these terms.</p>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

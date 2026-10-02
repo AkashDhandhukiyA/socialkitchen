@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import PageHero from '../components/shared/PageHero.astro';
+---
+
+<BaseLayout 
+  title="Editorial Policy — The Social Kitcchen"
+  description="Editorial Policy for The Social Kitcchen restaurant in Vapi."
+>
+  <Navbar />
+  <PageHero title="Editorial Policy" breadcrumbText="Editorial Policy" />
+  
+  <section class="section">
+    <div class="container" style="max-width: 800px; margin: 0 auto; line-height: 1.8;">
+      <h2>1. Content Accuracy</h2>
+      <p>Our culinary team at The Social Kitcchen ensures that all menu items, dietary labels (such as Jain or Vegan), and event descriptions published on this website are strictly vetted for accuracy by our Head Chef and Management Team.</p>
+      
+      <h2>2. Author Expertise</h2>
+      <p>All content is authored and reviewed by certified hospitality professionals with years of experience in pure vegetarian fine dining.</p>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import PageHero from '../components/shared/PageHero.astro';
+---
+
+<BaseLayout 
+  title="Privacy Policy — The Social Kitcchen"
+  description="Privacy Policy for The Social Kitcchen restaurant in Vapi."
+>
+  <Navbar />
+  <PageHero title="Privacy Policy" breadcrumbText="Privacy Policy" />
+  
+  <section class="section">
+    <div class="container" style="max-width: 800px; margin: 0 auto; line-height: 1.8;">
+      <h2>1. Information We Collect</h2>
+      <p>We collect information you provide directly to us when you make a reservation, contact us, or sign up for our newsletter.</p>
+      
+      <h2>2. How We Use Your Information</h2>
+      <p>We use the information we collect to provide, maintain, and improve our services, as well as to communicate with you about your reservations.</p>
+      
+      <h2>3. Contact Us</h2>
+      <p>If you have any questions about this Privacy Policy, please contact us.</p>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
