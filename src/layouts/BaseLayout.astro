@@ -12,7 +12,7 @@ interface Props {
 const { 
   title, 
   description, 
-  image = "/images/logo.png",
+  image = "/images/logo.webp",
   keywords = "Social Kitchen, food, recipes, cooking, social dining, community kitchen",
   preloadImage
 } = Astro.props;
@@ -48,7 +48,7 @@ const schema = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <link rel="icon" type="image/png" href="/images/logo.webp" />
     <link rel="llms" href="/llms.txt" />
     
     <!-- Primary Meta Tags -->
@@ -96,7 +96,10 @@ const schema = {
     <script is:inline>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','YOUR_PIXEL_ID');fbq('track','PageView');</script>
   </head>
   <body>
-    <slot />
+    <a href="#main-content" class="skip-link" style="position: absolute; left: -9999px; top: -9999px;">Skip to content</a>
+    <main id="main-content">
+      <slot />
+    </main>
     
     <script>
       // Global Scroll Animation Observer

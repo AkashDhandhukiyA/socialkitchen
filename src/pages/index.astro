@@ -5,10 +5,10 @@ import Footer     from '../components/Footer.astro';
 import Icon       from '../components/Icon.astro';
 
 const features = [
-  { img: '/images/icon-veg.jpg',  title: '100% Pure Veg',     desc: 'Every dish is completely vegetarian — including Jain options.' },
-  { img: '/images/icon-chef.jpg', title: 'Cooked to Order',   desc: 'Nothing sits under a heat lamp. Every dish starts when you order.' },
-  { img: '/images/icon-menu.jpg', title: 'Multi-Cuisine Menu',desc: 'North Indian, Indo-Chinese, Italian pasta, and Japanese sushi.' },
-  { img: '/images/icon-cake.jpg', title: 'Events & Parties',  desc: 'Dedicated private spaces for birthdays, anniversaries and corporate dinners.' },
+  { img: '/images/icon-veg.webp',  title: '100% Pure Veg',     desc: 'Every dish is completely vegetarian — including Jain options.' },
+  { img: '/images/icon-chef.webp', title: 'Cooked to Order',   desc: 'Nothing sits under a heat lamp. Every dish starts when you order.' },
+  { img: '/images/icon-menu.webp', title: 'Multi-Cuisine Menu',desc: 'North Indian, Indo-Chinese, Italian pasta, and Japanese sushi.' },
+  { img: '/images/icon-cake.webp', title: 'Events & Parties',  desc: 'Dedicated private spaces for birthdays, anniversaries and corporate dinners.' },
 ];
 
 
@@ -20,12 +20,12 @@ const reviews = [
 ];
 
 const events = [
-  { icon: 'cake', title: 'Birthday Celebrations', desc: 'Custom cakes, décor and a dedicated host for your special day.', img: '/images/dessert-cake.jpg',    meta: '10–40 guests' },
-  { icon: 'work', title: 'Corporate Dinners',     desc: 'Quiet private room, projectors and set menus for teams.',       img: '/images/interior-booth.jpg',  meta: '15–50 guests' },
-  { icon: 'heart',title: 'Anniversaries',         desc: 'Candle-lit corner tables, curated menus and romantic music.',   img: '/images/interior-floral.jpg', meta: '2–20 guests' },
+  { icon: 'cake', title: 'Birthday Celebrations', desc: 'Custom cakes, décor and a dedicated host for your special day.', img: '/images/dessert-cake.webp',    meta: '10–40 guests' },
+  { icon: 'work', title: 'Corporate Dinners',     desc: 'Quiet private room, projectors and set menus for teams.',       img: '/images/interior-booth.webp',  meta: '15–50 guests' },
+  { icon: 'heart',title: 'Anniversaries',         desc: 'Candle-lit corner tables, curated menus and romantic music.',   img: '/images/interior-floral.webp', meta: '2–20 guests' },
 ];
 ---
-<BaseLayout preloadImage="/images/hero.jpg"
+<BaseLayout preloadImage="/images/hero.webp"
   title="The Social Kitcchen — Pure Veg Restaurant in Vapi"
   description="A modern pure vegetarian restaurant in Vapi serving paneer specials, Indian-Chinese, pasta and sushi. Dine-in & reservations."
 >
@@ -58,7 +58,7 @@ const events = [
 
         <div class="hero-visual animate-fade-up delay-200">
           <div class="hero-image ext-style-3">
-            <img src="/images/hero.jpg" alt="The Social Kitcchen dining hall" class="ext-style-41" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"  width="1200" height="800" />
+            <img src="/images/hero.webp" alt="The Social Kitcchen dining hall" class="ext-style-41" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"  width="1200" height="800" / srcset="/images/hero.webp 1x, /images/hero.webp 2x">
           </div>
         </div>
       </div>
@@ -72,21 +72,21 @@ const events = [
         <!-- Group 1 -->
         <div class="marquee-group">
           <div class="hours-item ext-style-5">
-            <div class="hours-icon"><img src="/images/icon-sun.jpg" alt="Sun" class="ext-style-42"  width="100" height="100"  loading="lazy" /></div>
+            <div class="hours-icon"><img src="/images/icon-sun.webp" alt="Sun" class="ext-style-42"  width="100" height="100"  loading="lazy" / srcset="/images/icon-sun.webp 1x, /images/icon-sun.webp 2x"></div>
             <div>
               <div class="hours-label ext-style-6">Lunch Service</div>
               <div class="hours-value">11:00 AM – 3:00 PM</div>
             </div>
           </div>
           <div class="hours-item ext-style-7">
-            <div class="hours-icon"><img src="/images/icon-moon.jpg" alt="Moon" class="ext-style-43"  width="100" height="100"  loading="lazy" /></div>
+            <div class="hours-icon"><img src="/images/icon-moon.webp" alt="Moon" class="ext-style-43"  width="100" height="100"  loading="lazy" / srcset="/images/icon-moon.webp 1x, /images/icon-moon.webp 2x"></div>
             <div>
               <div class="hours-label ext-style-8">Dinner Service</div>
               <div class="hours-value">7:00 PM – 11:00 PM</div>
             </div>
           </div>
           <div class="hours-item ext-style-9">
-            <div class="hours-icon"><img src="/images/icon-phone.jpg" alt="Phone" class="ext-style-44"  width="100" height="100"  loading="lazy" /></div>
+            <div class="hours-icon"><img src="/images/icon-phone.webp" alt="Phone" class="ext-style-44"  width="100" height="100"  loading="lazy" / srcset="/images/icon-phone.webp 1x, /images/icon-phone.webp 2x"></div>
             <div>
               <div class="hours-label ext-style-10">Reservations</div>
               <div class="hours-value">07567640841</div>
@@ -96,21 +96,21 @@ const events = [
         <!-- Group 2 (Clone for seamless loop) -->
         <div class="marquee-group">
           <div class="hours-item ext-style-11">
-            <div class="hours-icon"><img src="/images/icon-sun.jpg" alt="Sun" class="ext-style-45"  width="100" height="100"  loading="lazy" /></div>
+            <div class="hours-icon"><img src="/images/icon-sun.webp" alt="Sun" class="ext-style-45"  width="100" height="100"  loading="lazy" / srcset="/images/icon-sun.webp 1x, /images/icon-sun.webp 2x"></div>
             <div>
               <div class="hours-label ext-style-12">Lunch Service</div>
               <div class="hours-value">11:00 AM – 3:00 PM</div>
             </div>
           </div>
           <div class="hours-item ext-style-13">
-            <div class="hours-icon"><img src="/images/icon-moon.jpg" alt="Moon" class="ext-style-46"  width="100" height="100"  loading="lazy" /></div>
+            <div class="hours-icon"><img src="/images/icon-moon.webp" alt="Moon" class="ext-style-46"  width="100" height="100"  loading="lazy" / srcset="/images/icon-moon.webp 1x, /images/icon-moon.webp 2x"></div>
             <div>
               <div class="hours-label ext-style-14">Dinner Service</div>
               <div class="hours-value">7:00 PM – 11:00 PM</div>
             </div>
           </div>
           <div class="hours-item ext-style-15">
-            <div class="hours-icon"><img src="/images/icon-phone.jpg" alt="Phone" class="ext-style-47"  width="100" height="100"  loading="lazy" /></div>
+            <div class="hours-icon"><img src="/images/icon-phone.webp" alt="Phone" class="ext-style-47"  width="100" height="100"  loading="lazy" / srcset="/images/icon-phone.webp 1x, /images/icon-phone.webp 2x"></div>
             <div>
               <div class="hours-label ext-style-16">Reservations</div>
               <div class="hours-value">07567640841</div>
@@ -153,7 +153,7 @@ const events = [
     <div class="container ext-style-20">
       <div class="split-feature">
         <div class="split-feature-image animate-fade-up">
-          <img src="/images/interior-bar.jpg" alt="The bar area at The Social Kitcchen" class="ext-style-52" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'"  width="800" height="600"  loading="lazy" />
+          <img src="/images/interior-bar.webp" alt="The bar area at The Social Kitcchen" class="ext-style-52" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'"  width="800" height="600"  loading="lazy" / srcset="/images/interior-bar.webp 1x, /images/interior-bar.webp 2x">
         </div>
         <div class="animate-fade-up delay-200">
           <span class="label">Our Space</span>
