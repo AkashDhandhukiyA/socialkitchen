@@ -22,7 +22,7 @@ const foodImages = [
     <div class="gallery-grid">
       {foodImages.map(img => (
         <div class:list={['gallery-item', img.size]}>
-          <img src={img.src} alt={img.alt} loading="lazy" />
+          <img src={img.src} alt={img.alt} loading="lazy" / width="800" height="600">
           <div class="gallery-cap">{img.caption}</div>
         </div>
       ))}
